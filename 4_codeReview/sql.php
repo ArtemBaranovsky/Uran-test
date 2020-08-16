@@ -17,7 +17,7 @@ $sql = 'SELECT COUNT(*)
             AND (id_rubrics @> ARRAY[11]) 
             AND (id_categories @> ARRAY[22121121121212]))';
 
-        // Запрос подсчитыает количество записей таблицы items базы данных content
+        // Запрос подсчитыает количество записей поля items таблицы content
         // из таблицы content.items
         // в с фильтрацией по трем полям:
         //    - status равным 1, 11 или 2

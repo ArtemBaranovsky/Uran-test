@@ -6,8 +6,8 @@ if ($_POST) {
     $token = (isset($_SESSION['id']['token'])) ?  $_SESSION['id']['token'] : md5(uniqid(rand(), true));
     $_SESSION['id']['token'] = $token;
 
-    echo("<pre>");    var_dump($_POST);     echo("</pre>");
-    echo("<pre>");    var_dump($_SESSION['id']);     echo("</pre>");
+/*    echo("<pre>");    var_dump($_POST);     echo("</pre>");
+    echo("<pre>");    var_dump($_SESSION['id']);     echo("</pre>");*/
 
 
     $auth = new Auth;
@@ -118,15 +118,15 @@ class Auth {
                 password_verify( $password , $this->credentials['password'] ))
             ) {
 echo("<br>".$email." ".$this->credentials['email']." " . $password . " " . $this->credentials['password'] ."<br>");
-var_dump(password_verify( $password , $this->credentials['password'] ));
+//var_dump(password_verify( $password , $this->credentials['password'] ));
                 $errors['password'] = "Invalid password";
                 $_SESSION['id']['countLoginTries'] = (isset($_SESSION['id']['countLoginTries'])) ? $_SESSION['id']['countLoginTries']+1 : 1;
                 $_SESSION['id']['errors'] = array_filter ($errors, function ($v){
                     return $v !== "";
                 });
-var_dump($_SESSION['id']['countLoginTries']);
+//var_dump($_SESSION['id']['countLoginTries']);
             } else {
-var_dump("Creds OK");
+//var_dump("Creds OK");
                 unset($_SESSION['id']['errors']);
             }
         }

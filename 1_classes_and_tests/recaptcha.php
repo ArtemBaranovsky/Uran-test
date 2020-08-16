@@ -101,7 +101,7 @@ function returnCaptcha($gRecaptchaResponse)
     if ($gRecaptchaResponse->success == true && $gRecaptchaResponse->score > 0.5) {
         $EnviaMail = True;
     } else {
-        $EnviaMail = False;s
+        $EnviaMail = False;
     }
     return $EnviaMail;
 }
